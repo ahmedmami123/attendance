@@ -1,5 +1,5 @@
 <?php
-$title='View Records';
+$title='View details';
 require_once 'includes/header.php' ;
 require_once 'db/conn.php' ;
 if(!isset($_GET['id'])){
@@ -12,6 +12,7 @@ $result=$crud->getAttendeeDetails($id);
 
 
 ?>
+<h1 class="text-center">View details</h1>
 
 <div class="card" style="width: 18rem;">
     <div class="card-body">
@@ -26,6 +27,12 @@ $result=$crud->getAttendeeDetails($id);
 
     </div>
 </div>
+<br>
+<a href="viewrecord.php" class="btn btn-info">Back To List</a>
+<a href="Edit.php?id=<?php echo $result['attendee_id']?>" class="btn btn-warning">Edit</a>
+<a onclick="return confirm('Are you sure you want to delete this record?');"
+    href="delete.php?id=<?php echo $result['attendee_id']?>" class="btn btn-danger">Delete</a>
+
 <?php } ?>
 <br>
 <br>

@@ -12,10 +12,12 @@ if(isset($_POST['submit'])){
 
     $isSuccess=$crud->insertAttendees($fname,$lname,$dob,$email,$contact,$specialty);
     if($isSuccess){
-echo'<h1 class="text-center text-success">You Have Been Rigstered</h1>';
+        include 'includes/successmessage.php';
+
     }
     else{
-        echo'<h1 class="text-center text-danger">there was an error in processing</h1>';
+        include 'includes/error.php';
+
 
     }
 }

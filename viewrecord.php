@@ -5,6 +5,8 @@ require_once 'db/conn.php' ;
 $results=$crud->GetAttendees();
 
 ?>
+<h1 class="text-center">View Records</h1>
+
 <table class="table">
     <tr>
         <th>#</th>
@@ -22,7 +24,13 @@ $results=$crud->GetAttendees();
         <td><?php echo $r['lastname']?></td>
 
         <td><?php echo $r['name']?></td>
-        <td><a href="view.php?id=<?php echo $r['attendee_id']?>" class="btn btn-primary">View</a></td>
+        <td>
+            <a href="view.php?id=<?php echo $r['attendee_id']?>" class="btn btn-primary">View</a>
+            <a href="Edit.php?id=<?php echo $r['attendee_id']?>" class="btn btn-warning">Edit</a>
+            <a onclick="return confirm('Are you sure you want to delete this record?');"
+                href="delete.php?id=<?php echo $r['attendee_id']?>" class="btn btn-danger">Delete</a>
+
+        </td>
 
 
 

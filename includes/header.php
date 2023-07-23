@@ -1,3 +1,10 @@
+<?php
+
+require_once 'includes/session.php' ;
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,11 +31,17 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
+                    <div class="navbar-nav mr-auto">
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link" href="viewrecord.php">View Attendees</a>
+
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a class="nav-link active" aria-current="page" href="index.php">Login</a>
                         <a class="nav-link" href="viewrecord.php">View Attendees</a>
 
                     </div>
                 </div>
             </div>
         </nav>
+        <br>
