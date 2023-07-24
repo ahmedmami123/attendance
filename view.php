@@ -1,6 +1,8 @@
 <?php
 $title='View details';
 require_once 'includes/header.php' ;
+require_once 'includes/auth_check.php';
+
 require_once 'db/conn.php' ;
 if(!isset($_GET['id'])){
     echo "<h1 class='text-danger'>Please check details and tray again</h1>";
@@ -13,6 +15,7 @@ $result=$crud->getAttendeeDetails($id);
 
 ?>
 <h1 class="text-center">View details</h1>
+<img src=<?php echo empty($result['avatar_path']) ? "Uploads\av.jpg" :$result['avatar_path']; ?> style="width: 26%;" />
 
 <div class="card" style="width: 18rem;">
     <div class="card-body">

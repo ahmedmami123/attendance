@@ -1,6 +1,8 @@
 <?php
-$title='Home';
+$title='Edit record';
 require_once 'includes/header.php' ;
+require_once 'includes/auth_check.php';
+
 require_once 'db/conn.php' ;
 $results=$crud->GetSpecialties();
 if(!isset($_GET['id'])){
@@ -16,7 +18,7 @@ else
 
 
 ?>
-<h1 class="text-center">Home</h1>
+<h1 class="text-center">Edit Record</h1>
 <form method="post" action="editPost.php">
     <input type="hidden" name="id" value="<?php echo $attendee['attendee_id']?>"></input>
 

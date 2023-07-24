@@ -1,5 +1,5 @@
 <?php 
-class user{
+class _user{
     private $db;
     //constructor to initialize private to the database connection
     function __construct($conn)
